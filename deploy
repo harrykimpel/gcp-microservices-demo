@@ -25,8 +25,9 @@ if [ $? -eq 1 ]; then
   kubectl -n $NAMESPACE create secret generic newrelic-key --from-literal=new-relic-license-key=$NEW_RELIC_LICENSE_KEY
 fi
 
-for SERVICE in $IMAGES
-do
-  echo Deploying $SERVICE
-  kubectl -n store apply -f $MANIFESTS/$SERVICE.yaml
-done
+kubectl -n store apply -f ./release/kubernetes-manifests.yaml
+#for SERVICE in $IMAGES
+#do
+#  echo Deploying $SERVICE
+#  kubectl -n store apply -f $MANIFESTS/$SERVICE.yaml
+#done

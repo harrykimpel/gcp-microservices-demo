@@ -1,4 +1,4 @@
-ariable "NEW_RELIC_API_KEY" {
+variable "NEW_RELIC_API_KEY" {
   type = string
 }
 
